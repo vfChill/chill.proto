@@ -59,6 +59,10 @@
           otherPayments: 350,
           minTerm: 1,
           maxTerm: 3,
+          
+        }
+        $scope.childBenefit = function(dependants){
+          return (dependants*140);
         }
          //Minimum and Maximum Loan Terms by Loan value
         $scope.calculateTerms = function(user){
@@ -127,7 +131,6 @@
         <div flex="100">
         <div>Other {{user.otherPayments | currency:'€'}}</div>
           <md-slider-container>
-            
             <md-slider flex min="100" max="10000" ng-model="user.otherPayments" aria-label="otherPayments" id="otherPayments-slider">
             </md-slider>
            
@@ -137,8 +140,12 @@
     </md-sidenav>
     <div layout="column" flex >
       <div class="box1" flex="100">
-        <h1></h1>
-      </div>
+        <div>
+          <h1>Child Benefit : {{childBenefit(user.dependant)}}</h1>
+        </div>
+        <div>
+          <h1>Terms: {{calculateTerms(user) }} {{user.rate}}</h1>
+        </div>
       <div class="box2">
         fixed
       </div>
