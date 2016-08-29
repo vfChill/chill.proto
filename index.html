@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+   <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc.5/angular-material.css"/>
+
+  
+    <style>
+      div {
+        border: none;
+      }
+
+
+      .box3, .box2, .box1 {  
+        display:flex;
+        box-sizing: border-box;
+        min-width:100%;
+      }
+
+      .box1 {  
+        max-height:70%;
+        flex:1 1 70%;
+      }
+
+      .box2 {
+        height:20px;  
+      }
+
+      .box3 {  
+        height:30%;
+        max-height:30%;
+        flex:1 1 30%;
+      }
+
+
+    </style>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc.5/angular-material.js"></script>
+
+    <script >
+       var chillModule =angular
+        .module('MyApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
+        .controller('DemoCtrl', function($scope) {
+        $scope.user = {
+          name: 'chill qq',
+          email: '',
+          phone: '',
+          dependant: 4,
+          loan: 18500,
+          salary: 3600,
+          rent: 700,
+          otherPayments: 350,
+          minTerm: 1,
+          maxTerm: 3,
+        }
+         //Minimum and Maximum Loan Terms by Loan value
+        $scope.calculateTerms = function(user){
+          var loanValue = $scope.user.loan;
+          if(loanValue>=1500 && loanValue<=4999){ 
+            $scope.user.minTerm = 1; 
+            $scope.user.maxTerm = 3; 
+            $scope.user.rate = 12.5;
+          }else if(loanValue>=5000 && loanValue<=14999){ 
+            $scope.user.minTerm = 1; 
+            $scope.user.maxTerm = 5;
+            $scope.user.rate = 10.9;
+          }else if(loanValue>=15000 && loanValue<=60000){ 
+            $scope.user.minTerm = 1; 
+            $scope.user.maxTerm = 7;
+            $scope.user.rate = 7.5;
+          }
+        }  
+      });
+    </script>
+
+  </head>  
+<body ng-app="MyApp" ng-cloak layout="column" ng-controller="DemoCtrl">
+
+  <md-toolbar>
+    Chill proto
+  </md-toolbar>
+  <div flex layout="row">
+    <md-sidenav flex="15" md-is-locked-open="true" class="md-whiteframe-z1" layout-padding>
+      <md-content>
+        <div flex="100">
+        <div>LOAN {{user.loan | currency:"€"}}</div> 
+          <md-slider flex min="1500" max="60000" ng-model="user.loan" aria-label="loan" id="loan-slider">
+          </md-slider>
+            
+            </md-input-container>
+          </md-slider-container>
+        </div>
+        <div flex="100">
+        <div>SALARY {{user.salary | currency:"€"}}</div>
+          <md-slider-container>
+            
+            <md-slider flex min="1" max="60000" ng-model="user.salary" aria-label="salary" id="salary-slider">
+            </md-slider>
+            
+          </md-slider-container>
+        </div>
+        <div flex="100">
+        <div>DEPENDATS {{user.dependant }}</div>
+          <md-slider-container>
+            
+            <md-slider flex min="0" max="10" ng-model="user.dependant" aria-label="dependant" id="dependant-slider">
+            </md-slider>
+            
+          </md-slider-container>
+        </div>
+        <div flex="100">
+        <div>RENT {{user.rent | currency:'€'}}</div>
+          <md-slider-container>
+            
+            <md-slider flex min="100" max="10000" ng-model="user.rent" aria-label="rent" id="rent-slider">
+            </md-slider>
+           
+          </md-slider-container>
+        </div>
+        <div flex="100">
+        <div>Other {{user.otherPayments | currency:'€'}}</div>
+          <md-slider-container>
+            
+            <md-slider flex min="100" max="10000" ng-model="user.otherPayments" aria-label="otherPayments" id="otherPayments-slider">
+            </md-slider>
+           
+          </md-slider-container>
+        </div>
+      </md-content>
+    </md-sidenav>
+    <div layout="column" flex >
+      <div class="box1" flex="100">
+        <h1></h1>
+      </div>
+      <div class="box2">
+        fixed
+      </div>
+      <div class="box3">
+        flex
+      </div>
+    </div>
+
+  </div>
+  </body>
+</html>
