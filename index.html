@@ -53,12 +53,14 @@
           email: '',
           phone: '',
           dependant: 4,
-          loan: 18500,
+          loan: 20000,
           salary: 3600,
           rent: 700,
           otherPayments: 350,
           minTerm: 1,
           maxTerm: 3,
+          repayments: 0,
+          monthlyPayment: 0
           
         }
         $scope.childBenefit = function(dependants){
@@ -80,6 +82,21 @@
             $scope.user.maxTerm = 7;
             $scope.user.rate = 7.5;
           }
+          $scope.repayments = function(user){
+            $scope.user.repayments =  user.rent + user.otherPayments;
+          }
+          
+          $scope.month = function(user){
+            var decimalRate = ((user.rate / 100)/12);
+                        
+            $scope.user.term = (Math.log((decimalRate/((user.monthlyPayment/user.loan)-decimalRate))+1)/Math.log(1+decimalRate))/12;
+          }
+          $scope.monthlyPayment = function(user){
+            var decimalRate = ((user.rate / 100)/12);
+            var months = (user.maxTerm * 12);
+
+            $scope.user.monthlyPayment = ( decimalRate + (decimalRate / ( Math.pow((1+decimalRate), months) -1)) ) * user.loan;
+          }
         }  
       });
     </script>
@@ -94,8 +111,8 @@
     <md-sidenav flex="15" md-is-locked-open="true" class="md-whiteframe-z1" layout-padding>
       <md-content>
         <div flex="100">
-        <div>LOAN {{user.loan | currency:"€"}}</div> 
-          <md-slider flex min="1500" max="60000" ng-model="user.loan" aria-label="loan" id="loan-slider">
+        <div>LOAN  {{user.loan | currency:'€'}}</div> 
+          <md-slider flex min="1000" max="60000" ng-model="user.loan" aria-label="loan" id="loan-slider"  >
           </md-slider>
             
             </md-input-container>
@@ -136,16 +153,75 @@
            
           </md-slider-container>
         </div>
+        <div flex="100">
+        <div>Repayments {{user.monthlyPayment | currency:'€'}}</div>
+          <md-slider-container>
+            <md-slider flex min="100" max="3000" ng-model="user.monthlyPayment" aria-label="monthlyPayment" id="monthlyPayment-slider">
+            </md-slider>
+           
+          </md-slider-container>
+        </div>
+        <div flex="100">
+        <div>Term {{user.term | number:0 }}</div>
+          <md-slider-container>
+            <md-slider flex min="1" max="7" ng-model="user.term" aria-label="term" id="term-slider">
+            </md-slider>
+           
+          </md-slider-container>
+        </div>
       </md-content>
     </md-sidenav>
     <div layout="column" flex >
+      <md-list flex>
+        <md-list-item class="md-3-line"  ng-click="null">
+          <img ng-src="" class="md-avatar" alt="" />
+          <div class="md-list-item-text" layout="column">
+            <h3>Loan: </h3>
+            <h4>{{loan(user) }}{{user.loan | currency:'€'}}</h4>
+            <p>C</p>
+          </div>
+        </md-list-item>
+        <md-list-item class="md-3-line"  ng-click="null">
+          <img ng-src="" class="md-avatar" alt="" />
+          <div class="md-list-item-text" layout="column">
+            <h3>Child Benefit: </h3>
+            <h4>{{childBenefit(user.dependant ) | currency:'€'}}</h4>
+            <p>C</p>
+          </div>
+        </md-list-item>
+        <md-list-item class="md-3-line"  ng-click="null">
+          <img ng-src="" class="md-avatar" alt="" />
+          <div class="md-list-item-text" layout="column">
+            <h3>Rate:</h3>
+            <h4>{{calculateTerms(user) }}{{user.rate +"%"}}</h4>
+            <p>C</p>
+          </div>
+        </md-list-item>
+        <md-list-item class="md-3-line"  ng-click="null">
+          <img ng-src="" class="md-avatar" alt="" />
+          <div class="md-list-item-text" layout="column">
+            <h3>Repayments:</h3>
+            <h4>{{monthlyPayment(user) }}{{user.monthlyPayment | currency:'€'}}</h4>
+            <p>C</p>
+          </div>
+        </md-list-item>
+        <md-list-item class="md-3-line"  ng-click="null">
+          <img ng-src="" class="md-avatar" alt="" />
+          <div class="md-list-item-text" layout="column">
+            <h3>Term:</h3>
+            <h4>{{month(user) }}{{user.term | number:0}}</h4>
+            <p>C</p>
+          </div>
+        </md-list-item>
+      </md-list>
       <div class="box1" flex="100">
         <div>
-          <h1>Child Benefit : {{childBenefit(user.dependant)}}</h1>
+          <h1></h1>
         </div>
         <div>
-          <h1>Terms: {{calculateTerms(user) }} {{user.rate}}</h1>
+          <h1> </h1>
         </div>
+      </div>
       <div class="box2">
         fixed
       </div>
