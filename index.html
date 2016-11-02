@@ -1,40 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" >
   <head>
+
+  <!--    meta Tags-->
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    Styles libs-->
+    <!-- <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.css"/> -->
+  
+    
    <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc.5/angular-material.css"/>
-
-  
-    <style>
-      div {
-        border: none;
-      }
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" r el="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="base.css"/>
 
 
-      .box3, .box2, .box1 {  
-        display:flex;
-        box-sizing: border-box;
-        min-width:100%;
-      }
-
-      .box1 {  
-        max-height:70%;
-        flex:1 1 70%;
-      }
-
-      .box2 {
-        height:20px;  
-      }
-
-      .box3 {  
-        height:30%;
-        max-height:30%;
-        flex:1 1 30%;
-      }
-
-
-    </style>
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
@@ -43,217 +26,52 @@
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
     <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc.5/angular-material.js"></script>
+    <!--    Datepicker format-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
+    
 
-    <script >
-       var chillModule =angular
-        .module('MyApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
-        .controller('DemoCtrl', function($scope) {
-        $scope.user = {
-          name: 'chill qq',
-          email: '',
-          phone: '',
-          dependant: 4,
-          loan: 0,
-          salary: 3600,
-          rent: 700,
-          otherPayments: 350,
-          minTerm: 3,
-          term: 5,
-          maxTerm: 7,
-          repayments: 0,
-         
-          
-        }
-       
-         // Income
-        $scope.childBenefit = function(dependants){
-          return (dependants*140);
-        }
-        $scope.totalIncome = function(user){
-          return user.salary + $scope.childBenefit(user.dependant);      
-        }
-        // Expenditure
-        $scope.livingExpenses = function(user){
-          var individual = 1400;
-          var child = 250;
-          return individual + (child*user.dependant);
-        }
-        $scope.repayments = function(user){
-          return user.rent + user.otherPayments;
-        }
+    <script src="js/ui-bootstrap-tpls-2.1.3.min.js"></script>
+    <script src="js/angulaUI-mask.js"></script>
 
-        // Net Disposable Income 
-        $scope.netDisposableIncome = function(user){
-          
-          $scope.user.NDI = ($scope.totalIncome(user) - ($scope.livingExpenses(user) + $scope.repayments(user)));
-          $scope.reCalc(user);
-          return $scope.user.NDI;
-        }
+    <!-- Module -->
+    <script src="main.module.js"></script>
+    <script src="app/app.controller.js"></script>
+    <script src="app/header/header.component.js"></script>
+    <script src="app/sidebar/sidebar.component.js"></script>
+    <style>
+    .risk-driver{
+          width: 320px;
+          font-family: 1.05em;
+    }
 
-        $scope.monthlyPayment = function(user){
-            var decimalRate = ((user.rate / 100)/12);
-            var months = (user.term * 12);
-
-            $scope.user.monthlyPayment =  ( decimalRate + (decimalRate / ( Math.pow((1+decimalRate), months) -1)) ) * user.loan;
-            return $scope.user.monthlyPayment;
-          }
-
-
-         //Minimum and Maximum Loan Terms by Loan value
-        $scope.calculateTerms = function(user){
-          var loanValue = $scope.user.loan;
-          if(loanValue>=1500 && loanValue<=4999){ 
-            $scope.user.minTerm = 3; 
-            $scope.user.term = 3;
-            $scope.user.maxTerm = 7; 
-            $scope.user.rate = 12.5;
-          }else if(loanValue>=5000 && loanValue<=14999){ 
-            $scope.user.minTerm = 3; 
-            $scope.user.term = 5;
-            $scope.user.maxTerm = 7;
-            $scope.user.rate = 10.9;
-          }else if(loanValue>=15000 && loanValue<=60000){ 
-            $scope.user.minTerm = 3; 
-            $scope.user.term = 7;
-            $scope.user.maxTerm = 7;
-            $scope.user.rate = 7.5;
-          }
-         
-          
-          $scope.month = function(user){
-            var decimalRate = ((user.rate / 100)/12);
-            var termResult;
-                        
-            $scope.user.term = (Math.log((decimalRate/((user.monthlyPayment/user.loan)-decimalRate))+1)/Math.log(1+decimalRate))/12;
-            
-
-          }
-          $scope.loan = function(user){
-            var decimalRate = ((user.rate / 100)/12);
-            var months = (user.term * 12);
-
-            $scope.user.loan = (user.monthlyPayment) / ( decimalRate + (decimalRate / ( Math.pow((1+decimalRate), months) -1)) );
-          }
-          $scope.reCalc = function(user){
-            console.log(user);
-            if(user.monthlyPayment >= user.NDI){
-                  $scope.imagePath = 'images/sadface2.gif';
-              }else{
-                  $scope.imagePath = 'images/thumb.png';
-              }
-          }
-          
-        }  
-      });
-    </script>
+    </style>
 
   </head>  
-<body ng-app="MyApp" ng-cloak layout="column" ng-controller="DemoCtrl">
-
-  <md-toolbar>
-    Chill proto
-  </md-toolbar>
-  <div flex layout="row">
-    <md-sidenav class="md-sidenav-left"
-        md-component-id="left"
-        md-is-locked-open="true"
-        md-whiteframe="4" 
-        layout-padding>
-      <md-content>
-        <div flex="100">
-          <div>LOAN  {{user.loan | currency:'€'}}</div> 
-          <md-slider-container>
-            <md-slider flex min="1000" max="60000" ng-model="user.loan" aria-label="loan" ng-change="monthlyPayment(user)" id="loan-slider" step="1000" >
-            </md-slider>
-          </md-slider-container>
+<body ng-app="FqApp" ng-cloak layout="column" ng-controller="AppCtrl">
+<!--    Header-->
+  <chill-fqheader ></chill-fqheader>
+  
+  <div flex layout="row" >
+     <md-sidenav class="risk-driver md-sidenav-left"
+      md-component-id="left"
+      md-is-locked-open="true"
+      md-whiteframe="4" 
+      layout="row" layout-align="space-around start"
+      md-theme="chill-purple">
+        <md-content>
+        <div layout="row" layout-align="space-between start" class="risk-driver">
+ 
+            <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links"  layout="row"    layout-align="space-between start">
+              <md-nav-item ng-repeat="item in navItems" md-nav-click="goto('{{item.value}}')" name="{{item.value}}">{{item.label}}</md-nav-item>
+            </md-nav-bar>
+            
         </div>
-        <div flex="100">
-          <div>SALARY {{user.salary | currency:"€"}}</div>
-          <md-slider-container>
-            <md-slider flex min="1" max="60000" ng-model="user.salary" aria-label="salary" id="salary-slider">
-            </md-slider> 
-          </md-slider-container>
-        </div>
-        <div flex="100">
-          <div>DEPENDATS {{user.dependant }}</div>
-          <md-slider-container>  
-            <md-slider flex min="0" max="10" ng-model="user.dependant" aria-label="dependant" id="dependant-slider">
-            </md-slider> 
-          </md-slider-container>
-        </div>
-        <div flex="100">
-        <div>RENT {{user.rent | currency:'€'}}</div>
-          <md-slider-container>  
-            <md-slider flex min="100" max="10000" ng-model="user.rent" aria-label="rent" id="rent-slider">
-            </md-slider>
-          </md-slider-container>
-        </div>
-        <div flex="100">
-          <div>Other {{user.otherPayments | currency:'€'}}</div>
-          <md-slider-container>
-            <md-slider flex min="100" max="10000" ng-model="user.otherPayments" aria-label="otherPayments" id="otherPayments-slider">
-            </md-slider> 
-          </md-slider-container>
-        </div>
-        <div flex="100">
-          <div>Repayments {{user.monthlyPayment | currency:'€'}}</div>
-          <md-slider-container>
-            <md-slider flex min="100" max="3000" ng-model="user.monthlyPayment" ng-change="{{month(user) }}" aria-label="monthlyPayment" id="monthlyPayment-slider">
-            </md-slider> 
-          </md-slider-container>
-        </div>
-        <div flex="100">
-          <div>Term {{user.term | number:0 }}</div>
-          <md-slider-container>
-            <md-slider flex min="{{user.minTerm}}" max="{{user.maxTerm}}" ng-model="user.term" aria-label="term" id="term-slider" step="2">
-            </md-slider> 
-          </md-slider-container>
-        </div>
-      </md-content>
-    </md-sidenav>
+        <md-divider md-inset></md-divider>
+        <span>{{currentNavItem}}</span>
+        </md-content>
+      </md-sidenav>
     <div layout="column" flex >
-      <md-list flex>
-        <md-list-item class="md-3-line"  ng-click="null">
-          <img ng-src="" class="md-avatar" alt="" />
-          <div class="md-list-item-text" layout="column">
-            <h3>Loan: </h3>
-            <h4>{{user.loan | currency:'€'}}</h4>
-            <p></p>
-          </div>
-        </md-list-item>
-        <md-list-item class="md-3-line"  ng-click="null">
-          <img ng-src="" class="md-avatar" alt="" />
-          <div class="md-list-item-text" layout="column">
-            <h3>Child Benefit: </h3>
-            <h4>{{childBenefit(user.dependant ) | currency:'€'}}</h4>
-            <p></p>
-          </div>
-        </md-list-item>
-        <md-list-item class="md-3-line"  ng-click="null">
-          <img ng-src="" class="md-avatar" alt="" />
-          <div class="md-list-item-text" layout="column">
-            <h3>Rate:</h3>
-            <h4>{{calculateTerms(user) }}{{user.rate +"%"}}</h4>
-            <p>C</p>
-          </div>
-        </md-list-item>
-        <md-list-item class="md-3-line"  ng-click="null">
-          <img ng-src="" class="md-avatar" alt="" />
-          <div class="md-list-item-text" layout="column">
-            <h3>Repayments:</h3>
-            <h4>{{user.monthlyPayment | currency:'€'}}</h4>
-            <p></p>
-          </div>
-        </md-list-item>
-        <md-list-item class="md-3-line"  ng-click="null">
-          <img ng-src="" class="md-avatar" alt="" />
-          <div class="md-list-item-text" layout="column">
-            <h3>Net Disposable Income:</h3>
-            <h4>{{netDisposableIncome(user) | number:0 }}</h4>
-            <p></p>
-          </div>
-        </md-list-item>
-      </md-list>
+      
     </div>
     <md-sidenav class="md-sidenav-right "
         md-component-id="right "
@@ -261,36 +79,7 @@
         md-whiteframe="4" 
         layout-padding>
       <md-content>
-        <div  layout="column" layout-xs="column" layout-align="center center" >
-            <div flex="100" layout-align="center center">
-              <md-card md-theme="{{ showDarkTheme ? 'dark-orange' : 'default' }}" md-theme-watch>
-                <md-card-content layout="column" layout-align="space-between">
-                {{reCalc(user)}}
-                  <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
-                
-                
-                </md-card-content>
-                <md-card-title>
-                  <md-card-title-text>                                       
-                    
-               
-                    <span class="md-subhead">Loan requested</span>
-                    <span class="md-headline">{{user.loan | currency:'€' }}</span>
-
-                    <md-divider ng-if="!$last"></md-divider>                   
-                                
-                    <span class="md-subhead">Term (months)</span>
-                    <span class="md-headline">{{user.maxTerm * 12 }}</span>
-
-                    <md-divider ng-if="!$last"></md-divider>
-                 
-                    <span class="md-subhead">Monthly Repayment</span>
-                    <span class="md-headline">{{user.monthlyPayment | currency:'€' }}</span>
-                  </md-card-title-text>
-                </md-card-title>
-              </md-card>
-            </div>
-        </div>
+        
       </md-content>
     </md-sidenav>
   </div>
