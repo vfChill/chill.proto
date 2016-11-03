@@ -3,7 +3,8 @@
 FQApp.controller('AppCtrl', ['$scope', '$http', function ($scope, $http) {
 	
 	"use strict";
-	
+	$scope.user = {
+      title: ''};
 	
 	$scope.today = new Date();
 	$scope.maxDate = new Date(
@@ -17,14 +18,18 @@ FQApp.controller('AppCtrl', ['$scope', '$http', function ($scope, $http) {
 			
 	};
 
+
+
+
 	$scope.currentNavItem = 'page1';
  
     $scope.navItems = [
-      {value: "page1", label: "Policy"},
-      {value: "page2", label: "Vehicle"},
-      {value: "page3", label: "Driver"},
+      {value: "Policy", label: "Policy"},
+      {value: "Vehicle", label: "Vehicle"},
+      {value: "Driver", label: "Driver"},
     ];
     
+
     $scope.addItem = function () {
       $scope.navItems.push(
         {
@@ -33,6 +38,23 @@ FQApp.controller('AppCtrl', ['$scope', '$http', function ($scope, $http) {
         }
       );
     }
-				
+    $scope.submissionDate = "";
+    $scope.userState = '';
+        $scope.states = ('1 year, 2 years, 3 years').split(',').map(function (state) { return { abbrev: state }; });
+
+
+	// $http.get('data/codebook/Chill-CND.json').then(function (response) {
+	// 	$scope.CDNs = response.data.data;
+	// });			
 	
+
+	$scope.showChanges = function() {
+    console.log ($scope.user);
+    console.log ($scope.policyDetails)
+	}
+
+
+
+	
+
 }]);

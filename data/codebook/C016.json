@@ -1,0 +1,19 @@
+{
+	"version": 1,
+	"dateCreated":"2016-11-03",
+	"author":"Victor Figueira",
+	"description": "lkmCoverType",
+	"code": "C016",
+	"data": [{
+		"value": "01",
+		"description": "Comprehensive"
+	},{
+		"value": "02",
+		"description": "Third Party"
+	}, {
+		"value": "03",
+		"description": "Third Party, fire and Theft"
+	
+	}]
+
+}

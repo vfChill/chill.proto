@@ -28,6 +28,7 @@
     <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc.5/angular-material.js"></script>
     <!--    Datepicker format-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
+
     
 
     <script src="js/ui-bootstrap-tpls-2.1.3.min.js"></script>
@@ -38,16 +39,59 @@
     <script src="app/app.controller.js"></script>
     <script src="app/header/header.component.js"></script>
     <script src="app/sidebar/sidebar.component.js"></script>
+    <script src="app/riskDriver/riskDriver.component.js"></script>
     <style>
     .risk-driver{
           width: 320px;
           font-family: 1.05em;
     }
+    .testclass button {
+      font-size: 1.05em;
+    }
+
+    /*overrite angular*/
+    .md-nav-item:first-of-type {
+    margin-left: 0px;
+    }
+   .tabsdemoDynamicHeight md-content {
+  background-color: transparent !important; }
+  .tabsdemoDynamicHeight md-content md-tabs {
+    background: white;
+    border: 1px solid #e1e1e1; }
+    .tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
+      background: white; }
+  .tabsdemoDynamicHeight md-content h1:first-child {
+    margin-top: 0; }
+   
+    .md-tab{
+      font-size: 1.03em;
+    }
+    md-datepicker {
+    position: relative;
+    left: -16px;
+  }
+    .md-datepicker-input-container{
+      margin-left: 0;
+    }
+    .md-datepicker-button.md-icon-button {
+      margin-right: 0;
+    }
+
+    md-radio-button {
+     margin-bottom: 0px; 
+   }
+   md-card{
+    margin: 8px 0px;
+   }
+   .genLabel{
+    color:rgba(0,0,0,0.54);
+    font-size: 0.75em;
+   }
 
     </style>
 
   </head>  
-<body ng-app="FqApp" ng-cloak layout="column" ng-controller="AppCtrl">
+<body ng-app="FqApp" ng-cloak layout="column" ng-controller="AppCtrl as ctrl">
 <!--    Header-->
   <chill-fqheader ></chill-fqheader>
   
@@ -56,18 +100,10 @@
       md-component-id="left"
       md-is-locked-open="true"
       md-whiteframe="4" 
-      layout="row" layout-align="space-around start"
+      layout="row" 
       md-theme="chill-purple">
-        <md-content>
-        <div layout="row" layout-align="space-between start" class="risk-driver">
- 
-            <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links"  layout="row"    layout-align="space-between start">
-              <md-nav-item ng-repeat="item in navItems" md-nav-click="goto('{{item.value}}')" name="{{item.value}}">{{item.label}}</md-nav-item>
-            </md-nav-bar>
-            
-        </div>
-        <md-divider md-inset></md-divider>
-        <span>{{currentNavItem}}</span>
+        <md-content flex>
+          <chill-riskdriver policyDetails="ctrl.policyDetails"></chill-riskdriver>
         </md-content>
       </md-sidenav>
     <div layout="column" flex >
