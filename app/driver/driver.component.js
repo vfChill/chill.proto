@@ -1,10 +1,11 @@
 function DriverController($scope, $http) {
   $scope.driverDetails = {
+    gender: 'M'
 		
 	};
-	// $http.get('data/codebook/Chill-CND.json').then(function (response) {
-	// 	$scope.CDNs = response.data.data;
-	// });
+	$http.get('data/codebook/C02.json').then(function (response) {
+		$scope.lkmSexCode = response.data.data;
+	});
 	
 }
 

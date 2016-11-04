@@ -1,0 +1,24 @@
+{
+	"version": 1,
+	"dateCreated":"2016-11-04",
+	"author":"Victor Figueira",
+	"description": "lkmOverNightLocation",
+	"code": "C015",
+	"data": [{
+		"value": "01",
+		"description": "Carpot"
+	},{
+		"value": "02",
+		"description": "Garagge"
+	}, {
+		"value": "03",
+		"description": "Kept on Private Property"
+	}, {
+		"value": "04",
+		"description": "Kept on Public Road"
+	}, {
+		"value": "05",
+		"description": "Parked On Drive"
+	}]
+
+}

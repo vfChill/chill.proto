@@ -3,9 +3,36 @@
     <hr>
     <form name="userForm">
     <!-- Gender-->
+    <label class="genLabel">Gender</label>   
+        <div layout="row">
+                     
+            <md-radio-group ng-model="driverDetails.gender" layout="row" flex ng-change="showChanges()">
+                <md-radio-button  ng-repeat="gender in lkmSexCode" flex ng-value="gender.value">{{gender.description}}</md-radio-button >
+            </md-radio-group>
+        </div>
+        <hr>
     <!-- Firstname -->
+        <div layout="row">
+            <md-input-container class="md-block" flex>
+                <label>Firstname</label>
+                <input ng-model="driverDetails.firstname"  ng-change="showChanges()">
+            </md-input-container>
+        </div>
+        <hr>
     <!-- Surname -->
+        <div layout="row">
+            <md-input-container class="md-block" flex>
+                <label>Surname</label>
+                <input ng-model="driverDetails.surname"  ng-change="showChanges()">
+            </md-input-container>
+        </div>
+        <hr>
     <!-- Date of birth -->
+        <label class="genLabel">Date of Birthday</label>
+        <div layout="row" flex>
+            <md-datepicker ng-model="driverDetails.DOB" ng-change="showChanges()" flex></md-datepicker> 
+        </div>
+        <hr>
     <!-- Employment Status -->
     <!-- EMpolyer Busienss-->
     <!-- Ocupation-->

@@ -1,10 +1,13 @@
 function VehicleController($scope, $http) {
   $scope.vehicleDetails = {
-		carReg: "12D12345"
+		carReg: "12D12345",
+        value: 10000,
+        
 	};
-	// $http.get('data/codebook/Chill-CND.json').then(function (response) {
-	// 	$scope.CDNs = response.data.data;
-	// });
+	$http.get('data/codebook/C015.json').then(function (response) {
+		$scope.lkmOverNightLocation = response.data.data;
+	});
+    
 	
 }
 

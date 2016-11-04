@@ -47,7 +47,29 @@ FQApp.controller('AppCtrl', ['$scope', '$http', function ($scope, $http) {
 	$scope.showChanges = function() {
    console.log ($scope.vehicleDetails)
     console.log ($scope.policyDetails)
+    console.log ($scope.driverDetails)
 	}
+
+  $scope.getYears = function (offset, range, direction){
+        var currentYear = new Date().getFullYear();
+        var years = [];
+        switch(direction)
+        {
+          case 'back':
+            for (var i = 0; i < range + 1; i++){
+            years.push(currentYear - offset - i);
+            }
+          break;
+          case 'foward':
+          default:
+            for (var i = 0; i < range + 1; i++){
+            years.push(currentYear + offset + i);
+            }
+          break;
+        }        
+        return years;
+    }
+    $scope.yearsPurchased = $scope.getYears(0,7,'back');
 
 
 

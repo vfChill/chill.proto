@@ -2,16 +2,55 @@
     <h2 class="chill-font-purple ">Vehicle Details</h2>
     <hr>
     <form name="userForm">
-    <!-- Car Reg -->
-     <div layout="row">
-        <md-input-container class="md-block" flex>
-            <label>Car Registration Number</label>
-            <input ng-model="vehicleDetails.carReg" ng-disabled="true" ng-change="showChanges()">
-        </md-input-container>
-     </div>
-    <!-- Car Value -->
-    <!-- Year Purchased -->
-    <!-- Mileage -->
-    <!-- Parked Over Night -->
+        <!-- Car Reg -->
+        <div layout="row">
+            <md-input-container class="md-block" flex>
+                <label>Vehicle Registration Number</label>
+                <input ng-model="vehicleDetails.carReg" ng-disabled="true" ng-change="showChanges()">
+            </md-input-container>
+        </div>
+        <hr>
+        <!-- Car Value -->
+        <div layout="row">
+            <md-input-container class="md-block" flex>
+                <label>Vehicle Value</label>
+                <input ng-model="vehicleDetails.value" ng-disabled="true" type="number" ng-change="showChanges()">
+            </md-input-container>
+        </div>
+        <hr>
+        <!-- Year Purchased -->
+        <div layout="row">
+            <md-input-container class="md-block" flex>
+                <label>Year Purchased</label>
+                <md-select ng-model="vehicleDetails.yearPurchased" ng-change="showChanges()">
+                    <md-option ng-repeat="year in yearsPurchased" ng-value="year">{{year}}</md-option>
+                    <md-option ng-value="8"><em>More than 7 years...</em></md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+        <hr>
+        <!-- Mileage -->
+        <label class="genLabel"> Mileage</label>
+        <div layout = "row" class="md-block" flex>
+            <md-slider-container class="md-block " flex>
+                <md-slider flex min="1000" max="99000" step="1000" ng-model="vehicleDetails.mileage" aria-label="mileage" id="mileage-slider" ng-change="showChanges()">
+                </md-slider>
+                <span>{{vehicleDetails.mileage | number }}</span>
+                <!--<md-input-container>
+                    <input flex type="number" step="100" ng-model="vehicleDetails.mileage" aria-label="mileage" aria-controls="mileage-slider">
+                </md-input-container>-->
+            </md-slider-container>
+        </div>
+        <hr>
+        <!-- Parked Over Night -->
+        <div layout="row">
+            <md-input-container class="md-block" flex>
+                <label>Parked Over Night</label>
+                <md-select ng-model="vehicleDetails.parkedOverNight" ng-change="showChanges()">
+                    <md-option ng-repeat="place in lkmOverNightLocation" ng-value="place.value">{{place.description}}</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+        <hr>
     </form>
 </div>
