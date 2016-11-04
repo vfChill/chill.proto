@@ -3,7 +3,7 @@
     <md-tabs md-stretch-tabs="always" md-dynamic-height="2" md-border-bottom="">
       <md-tab label="Policy">
         <md-content class="md-padding">
-          <h1 class="md-display-2">Policy Details</h1>
+          <h2 class="chill-font-purple ">Policy Details</h2>
           
           <hr>
           <form name="userForm">
@@ -58,15 +58,13 @@
             <!-- EXCESS -->
             <label class="genLabel">Voluntary Excess</label>
             <div layout = "row" class="md-block" flex>
-            <md-slider-container class="md-block" flex>
-              
-              <md-slider  md-discrete  flex min="0" max="600" step="100" ng-model="color.red" aria-label="red" id="red-slider">
-              </md-slider>
-              <md-input-container>
-        <input flex type="number" ng-model="color.red" aria-label="red" aria-controls="red-slider">
-      </md-input-container>
-              
-            </md-slider-container>
+              <md-slider-container class="md-block" flex>
+                <md-slider  md-discrete  flex min="0" max="600" step="100" ng-model="color.red" aria-label="red" id="red-slider">
+                </md-slider>
+                <md-input-container>
+                  <input flex type="number" ng-model="color.red" aria-label="red" aria-controls="red-slider">
+                </md-input-container>
+              </md-slider-container>
             </div>
             <!-- <div layout="row">  
               <md-input-container class="md-block" flex>

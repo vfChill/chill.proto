@@ -2,57 +2,69 @@ var FQApp = angular.module('FqApp', ['ngMaterial','ui.bootstrap', 'ngMessages', 
 
 	FQApp.config(function($mdThemingProvider) {
 				
-		$mdThemingProvider.definePalette('chillPalette', {
-			'50': '4a2b81',
-			'100': '4a2b81',
-			'200': '4a2b81',
-			'300': '4a2b81',
-			'400': '4a2b81',
-			'500': '4a2b81',
-			'600': '4a2b81',
-			'700': '4a2b81',
-			'800': '4a2b81',
-			'900': '4a2b81',
-			'A100': '4a2b81',
-			'A200': '4a2b81',
-			'A400': '4a2b81',
-			'A700': '4a2b81',
-			'contrastDefaultColor': 'light',    // whether, by default, text (contrast)
-												// on this palette should be dark or light
+		
+		$mdThemingProvider.definePalette('chillpurple', {
+			'50': '#d6c8ed',
+			'100': '#aa8fda',
+			'200': '#8a65cc',
+			'300': '#643aaf',
+			'400': '#573398',
+			'500': '#4a2b81',
+			'600': '#3d236a',
+			'700': '#301c53',
+			'800': '#22143c',
+			'900': '#150c25',
+			'A100': '#d6c8ed',
+			'A200': '#aa8fda',
+			'A400': '#573398',
+			'A700': '#301c53',
+			'contrastDefaultColor': 'light',
+			'contrastDarkColors': '50 100 A100 A200'
+			});
+		
 
-			'contrastDarkColors': ['50', '100', //hues which contrast should be 'dark' by default
-			 '200', '300', '400', 'A100'],
-			'contrastLightColors': undefined    // could also specify this if default was 'dark'
+		$mdThemingProvider.definePalette('chillgreen', {
+		'50': '#ffffff',
+		'100': '#eaf1d4',
+		'200': '#d6e3a9',
+		'300': '#bdd273',
+		'400': '#b2ca5c',
+		'500': '#a7c345',
+		'600': '#96b039',
+		'700': '#829931',
+		'800': '#6f822a',
+		'900': '#5b6b23',
+		'A100': '#ffffff',
+		'A200': '#eaf1d4',
+		'A400': '#b2ca5c',
+		'A700': '#829931',
+		'contrastDefaultColor': 'light',
+		'contrastDarkColors': '50 100 200 300 400 500 600 700 A100 A200 A400 A700'
 		});
-
-		$mdThemingProvider.definePalette('chillPaletteGreen', {
-			'50': 'a7c345',
-			'100': 'a7c345',
-			'200': 'a7c345',
-			'300': 'a7c345',
-			'400': 'a7c345',
-			'500': 'a7c345',
-			'600': 'a7c345',
-			'700': 'a7c345',
-			'800': 'a7c345',
-			'900': 'a7c345',
-			'A100': 'a7c345',
-			'A200': 'a7c345',
-			'A400': 'a7c345',
-			'A700': 'a7c345',
-			'contrastDefaultColor': 'light',    // whether, by default, text (contrast)
-												// on this palette should be dark or light
-
-			'contrastDarkColors': ['50', '100', //hues which contrast should be 'dark' by default
-			 '200', '300', '400', 'A100'],
-			'contrastLightColors': undefined    // could also specify this if default was 'dark'
-		});
+		$mdThemingProvider.definePalette('chillcream', {
+			'50': '#ffffff',
+			'100': '#ffffff',
+			'200': '#ffffff',
+			'300': '#ffffff',
+			'400': '#fffffe',
+			'500': '#f4f4ea',
+			'600': '#e9e9d6',
+			'700': '#dfdfc2',
+			'800': '#d4d4ae',
+			'900': '#caca9a',
+			'A100': '#ffffff',
+			'A200': '#ffffff',
+			'A400': '#fffffe',
+			'A700': '#dfdfc2',
+			'contrastDefaultColor': 'light',
+			'contrastDarkColors': '50 100 200 300 400 500 600 700 800 900 A100 A200 A400 A700'
+			});
 				
 		$mdThemingProvider.theme('dark-grey').backgroundPalette('grey').dark();
 		$mdThemingProvider.theme('dark-orange').backgroundPalette('orange').dark();
-		$mdThemingProvider.theme('chill-purple').primaryPalette('chillPalette');
-		$mdThemingProvider.theme('dark-blue').backgroundPalette('blue').dark();
-		$mdThemingProvider.theme('chill-purple').accentPalette('chillPaletteGreen');
+		$mdThemingProvider.theme('chill-palette').primaryPalette('chillpurple');
+		$mdThemingProvider.theme('chill-palette').backgroundPalette('chillcream');
+		$mdThemingProvider.theme('chill-palette').accentPalette('chillgreen');
 	});
 			
 	FQApp.config(function($mdDateLocaleProvider){
