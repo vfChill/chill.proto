@@ -26,3 +26,51 @@ body{
 .purple{
     color: rgb(74,43,129);
 }
+
+
+ .risk-driver{
+          width: 320px;
+          font-family: 1.05em;
+    }
+    .testclass button {
+      font-size: 1.05em;
+    }
+
+    /*overrite angular*/
+    .md-nav-item:first-of-type {
+    margin-left: 0px;
+    }
+   .tabsdemoDynamicHeight md-content {
+  background-color: transparent !important; }
+  .tabsdemoDynamicHeight md-content md-tabs {
+    
+    border: 1px solid #e1e1e1; }
+    .tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
+      background: white; }
+  .tabsdemoDynamicHeight md-content h1:first-child {
+    margin-top: 0; }
+   
+    .md-tab{
+      font-size: 1.03em;
+    }
+    md-datepicker {
+    position: relative;
+    left: -16px;
+  }
+    .md-datepicker-input-container{
+      margin-left: 0;
+    }
+    .md-datepicker-button.md-icon-button {
+      margin-right: 0;
+    }
+
+    md-radio-button {
+     margin-bottom: 0px; 
+   }
+   md-card{
+    margin: 8px 0px;
+   }
+   .genLabel{
+    color:rgba(0,0,0,0.54);
+    font-size: 0.75em;
+   }

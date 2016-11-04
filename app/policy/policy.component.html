@@ -1,0 +1,70 @@
+<div ng-cloak="" ng-controller="AppCtrl as ctrl">
+    <h2 class="chill-font-purple ">Policy Details</h2>
+    <hr>
+    <form name="userForm">
+    <!-- NCD -->
+    <div layout="row">
+        <md-input-container class="md-block" flex>
+            <label>No Claims Discounts</label>
+            <md-select ng-model="policyDetails.ncd" ng-change="showChanges()">
+                <md-option><em>None</em></md-option>
+                <md-option ng-repeat="cdn in CDNs" ng-value="cdn.value">{{cdn.description}}</md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+    <hr>
+    <!-- COVER TYPE -->
+    <label class="genLabel">Cover type</label>
+    <div ng-repeat="coverType in coverTypes"  layout="row">  
+        <md-card  layout="row" md-theme-watch class="md-block" flex>
+            <md-card-actions layout="row" layout-align="start center">
+                <md-radio-group ng-model="policyDetails.coverType" ng-change="showChanges()">
+                    <md-radio-button   ng-value="coverType.value"  class="md-primary" >{{coverType.description}}</md-radio-button>
+                </md-radio-group>
+            </md-card-actions>
+        </md-card>
+    </div>
+    <!-- <div layout="row"> 
+        <md-input-container class="md-block" flex>
+        <label>Cover type</label>
+
+        <md-select ng-model="policyDetails.coverType" ng-change="showChanges()">
+            <md-option><em>None</em></md-option>
+            <md-option ng-repeat="coverType in coverTypes" ng-value="coverType.value" >
+            {{coverType.description}}
+            </md-option>
+        </md-select>
+        </md-input-container>
+    </div> -->
+    <hr>
+    <!-- START DATE -->
+    <label class="genLabel">Start Date</label>
+    <div layout="row" flex>
+    <!-- <md-calendar class="fixed-calendar" ng-model="policyDetails.startDate"></md-calendar> -->
+        <md-datepicker ng-model="policyDetails.startDate" ng-change="showChanges()" flex></md-datepicker> 
+    </div>
+    <hr>
+    <!-- EXCESS -->
+    <label class="genLabel">Voluntary Excess</label>
+    <div layout = "row" class="md-block" flex>
+        <md-slider-container class="md-block " flex>
+            <md-slider  md-discrete  flex min="0" max="600" step="100" ng-model="policyDetails.voluntaryExcess" aria-label="voluntaryExcess" id="voluntaryExcess-slider" ng-change="showChanges()">
+            </md-slider>
+            <md-input-container>
+                <input flex type="number" step="100" ng-model="policyDetails.voluntaryExcess" aria-label="voluntaryExcess" aria-controls="voluntaryExcess-slider">
+            </md-input-container>
+        </md-slider-container>
+    </div>
+    <!-- <div layout="row">  
+        <md-input-container class="md-block" flex>
+        <label >Voluntary Excess</label>
+        <md-select ng-model="ctrl.userState">
+            <md-option><em>None</em></md-option>
+            <md-option ng-repeat="state in ctrl.states" ng-value="state.abbrev" ng-disabled="$index === 1">
+            {{state.abbrev}}
+            </md-option>
+        </md-select>
+        </md-input-container>
+    </div> -->
+    </form>
+</div>

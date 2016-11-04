@@ -3,8 +3,7 @@
 FQApp.controller('AppCtrl', ['$scope', '$http', function ($scope, $http) {
 	
 	"use strict";
-	$scope.user = {
-      title: ''};
+
 	
 	$scope.today = new Date();
 	$scope.maxDate = new Date(
@@ -17,9 +16,6 @@ FQApp.controller('AppCtrl', ['$scope', '$http', function ($scope, $http) {
 	$scope.application = {
 			
 	};
-
-
-
 
 	$scope.currentNavItem = 'page1';
  
@@ -49,7 +45,7 @@ FQApp.controller('AppCtrl', ['$scope', '$http', function ($scope, $http) {
 	
 
 	$scope.showChanges = function() {
-    console.log ($scope.user);
+   console.log ($scope.vehicleDetails)
     console.log ($scope.policyDetails)
 	}
 
