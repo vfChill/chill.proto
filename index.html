@@ -55,16 +55,46 @@
       md-theme="chill-palette">
         <md-content flex>
           <chill-riskdriver ></chill-riskdriver>
+          <md-content layout="column" flex>
+          <div flex layout="column">
+            <section flex="none">
+              <div ng-if="displayContent" style="min-height:20px;background-color:SteelBlue;color:white;" ng-repeat="card in cards|limitTo: displayLim track by $index">{{card.title}}
+              </div>
+            </section>
+            <div flex></div>
+            <footer flex="none" style="background-color:orange;color:white;">
+              <div>footer item</div>
+            </footer>
+          </div>
         </md-content>
+        </md-content>
+       
       </md-sidenav>
     <!--    CENTER-->
     <div layout="column" flex >
-      
+      <md-toolbar md-theme="chill-palette" class="toolsBar md-hue-1">
+      <div class="md-toolbar-tools ">
+        <md-button aria-label="Go Back">
+          Go Back
+        </md-button>
+        <meter value="0.6">60%</meter>
+        <div layout="row" layout-sm="column" layout-align="space-around">
+      <md-progress-circular md-mode="determinate" value="30"></md-progress-circular>
+    </div>
+        <span flex></span>
+        <md-button class="md-raised" aria-label="Learn More">
+          Learn More
+        </md-button>
+        <md-button class="md-fab md-mini" aria-label="Favorite">
+          <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
     </div>
     <!--    RIGHT-->
     <md-sidenav class="md-sidenav-right "
         md-component-id="right "
-        md-is-locked-open="true"
+        md-is-locked-open="false"
         md-whiteframe="4" 
         layout-padding>
       <md-content>
