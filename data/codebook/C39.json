@@ -1,0 +1,14 @@
+{
+	"version": 1,
+	"dateCreated": "2016-11-07",
+	"author": "Victor Figueira",
+    "company": "Chill",
+	"description": "lkmBodyType",
+	"code": "039",
+	"data": 
+        [{"value":2,"description":"Convertible"},
+        {"value":3,"description":"Coupe"},
+        {"value":4,"description":"Estate"},
+        {"value":5,"description":"Hatchback"},
+        {"value":9,"description":"Saloon"}]
+}

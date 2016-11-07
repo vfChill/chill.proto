@@ -1,0 +1,16 @@
+{
+	"version": 1,
+	"dateCreated": "2016-11-07",
+	"author": "Victor Figueira",
+    "company": "Chill",
+	"description": "lkmFrequencyOfUse",
+	"code": "021",
+	"data": 
+        [{"value":"E","description":"Excluded"},
+        {"value":"F","description":"Frequent"},
+        {"value":"C","description":"Infrequent (Casual)"},
+        {"value":"M","description":"Main"},
+        {"value":"N","description":"Non Driving"},
+        {"value":"T","description":"Temporary"}]
+
+}

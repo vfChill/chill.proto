@@ -1,0 +1,32 @@
+{
+	"version": 1,
+	"dateCreated": "2016-11-07",
+	"author": "Victor Figueira",
+    "company": "Chill",
+	"description": "lkmConvictionCode",
+	"code": "019",
+	"data": 
+        [{"value":"A","description":"Brother"},
+        {"value":"B","description":"Employer of Proposer"},
+        {"value":"C","description":"Business Partner"},
+        {"value":"E","description":"Employee of Proposer"},
+        {"value":"G","description":"Daughter in Law"},
+        {"value":"H","description":"Sister in Law"},
+        {"value":"J","description":"Brother in Law"},
+        {"value":"K","description":"Sister"},
+        {"value":"L","description":"Son in Law"},
+        {"value":"M","description":"Parent"},
+        {"value":"N","description":"Son"},
+        {"value":"O","description":"Daughter"},
+        {"value":"P","description":"Father in Law"},
+        {"value":"R","description":"Relative"},
+        {"value":"S","description":"Spouse"},
+        {"value":"T","description":"Tenant"},
+        {"value":"U","description":"Unrelated"},
+        {"value":"V","description":"Mother In Law"},
+        {"value":"W","description":"Common Law Spouse"},
+        {"value":"X","description":"Partner"},
+        {"value":"Y","description":"Friend"},
+        {"value":"Z","description":"Proposer"}]
+
+}

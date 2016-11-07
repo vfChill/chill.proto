@@ -11,7 +11,7 @@ FQApp.controller('AppCtrl', ['$scope', '$http', function ($scope, $http) {
 		$scope.today.getMonth(),
 		$scope.today.getDate()
 	);
-					
+			
 					
 	$scope.application = {
 			
@@ -48,6 +48,8 @@ FQApp.controller('AppCtrl', ['$scope', '$http', function ($scope, $http) {
    console.log ($scope.vehicleDetails)
     console.log ($scope.policyDetails)
     console.log ($scope.driverDetails)
+    console.log($scope.statesA);
+    console.log($scope.lkmOccupationList);
 	}
 
   $scope.getYears = function (offset, range, direction){

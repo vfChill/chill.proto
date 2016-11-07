@@ -1,0 +1,27 @@
+{
+	"version": 1,
+	"dateCreated": "2016-11-07",
+	"author": "Victor Figueira",
+    "company": "Chill",
+	"description": "lkmDriverQualification",
+	"code": "045",
+	"data": 
+        [{"value":"K","description":"AF154 Licence Qualification"},
+        {"value":"I","description":"Curfew"},
+        {"value":"S","description":"Diamond Advanced Motorist Qualification"},
+        {"value":"P","description":"Driving School Advanced Driving Course"},
+        {"value":"L","description":"Driving School Module 1"},
+        {"value":"M","description":"Driving School Module 2"},
+        {"value":"N","description":"Driving School Module 3"},
+        {"value":"R","description":"Driving School Module 4"},
+        {"value":"T","description":"Essential Driver Training (RSA)"},
+        {"value":"G","description":"IAM UK Advanced Driving Course"},
+        {"value":"E","description":"Ignition Course Distinction"},
+        {"value":"F","description":"Ignition Course Distinction & Curfew"},
+        {"value":"C","description":"Ignition Course Merit"},
+        {"value":"D","description":"Ignition Course Merit & Curfew"},
+        {"value":"A","description":"Ignition Course Pass"},
+        {"value":"B","description":"Ignition Course Pass & Curfew"},
+        {"value":"J","description":"Primary Assessment"},
+        {"value":"H","description":"ROSPA Advanced Driving Course"}]
+}

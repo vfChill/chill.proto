@@ -1,0 +1,20 @@
+{
+	"version": 1,
+	"dateCreated": "2016-11-07",
+	"author": "Victor Figueira",
+    "company": "Chill",
+	"description": "lkmClaimCode",
+	"code": "020",
+	"data": 
+        [{"value":"A","description":"Accident"},
+        {"value":"D","description":"Accidental Damage"},
+        {"value":"F","description":"Fire"},
+        {"value":"M","description":"Malicious Damage As A Result Of Theft"},
+        {"value":"P","description":"Personal Accident"},
+        {"value":"E","description":"Personal Effects"},
+        {"value":"T","description":"Theft"},
+        {"value":"B","description":"Third Party"},
+        {"value":"V","description":"Vandalism"},
+        {"value":"W","description":"Windscreen"}]
+
+}

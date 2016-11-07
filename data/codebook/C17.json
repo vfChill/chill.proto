@@ -1,0 +1,15 @@
+{
+	"version": 1,
+	"dateCreated": "2016-11-07",
+	"author": "Victor Figueira",
+    "company": "Chill",
+	"description": "lkmClassOfUse",
+	"code": "017",
+	"data": 
+        [{"value":"1","description":"Class 1"},
+        {"value":"2","description":"Class 2"},
+        {"value":"3","description":"Class 3"},
+        {"value":"F","description":"Farmers"},
+        {"value":"5","description":"Social, Domestic And Pleasure"}]
+
+}

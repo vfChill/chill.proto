@@ -1,0 +1,18 @@
+{
+	"version": 1,
+	"dateCreated":"2016-11-07",
+	"author":"Victor Figueira",
+    "company": "Chill",
+	"description": "lkmLicenceType",
+	"code": "C08",
+	"data": [
+        {"value":"I","description":"Foreign"},
+        {"value":"F","description":"Full EU"},
+        {"value":"C","description":"Full Irish"},
+        {"value":"D","description":"Full UK"},
+        {"value":"N","description":"International  Licence"},
+        {"value":"G","description":"Learner Permit"},
+        {"value":"R","description":"Licence Revoked"},
+        {"value":"A","description":"No Licence Ever Held"},
+        {"value":"B","description":"Provisional Irish"}]
+}

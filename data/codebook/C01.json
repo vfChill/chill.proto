@@ -1,15 +1,20 @@
 {
 	"version": 1,
-	"dateCreated":"2016-09-21",
+	"dateCreated":"2016-11-07",
 	"author":"Victor Figueira",
-	"description": "Yes/No",
+	"company": "Chill",
+	"description": "lkmTitleCode",
 	"code": "C01",
-	"data": [{
-		"value": "Y",
-		"description": "Yes"
-	}, {
-		"value": "N",
-		"description": "No"
-	}]
+	"data": [
+		{"value":"027","description":"Br."},
+		{"value":"001","description":"Dr."},
+		{"value":"035","description":"Fr."},
+		{"value":"002","description":"Miss."},
+		{"value":"005","description":"Mr."},
+		{"value":"004","description":"Mrs."},
+		{"value":"003","description":"Ms."},
+		{"value":"024","description":"Prof."},
+		{"value":"006","description":"Rev."},
+		{"value":"030","description":"Sr."}]
 
 }

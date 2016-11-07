@@ -1,0 +1,28 @@
+{
+	"version": 1,
+	"dateCreated":"2016-11-07",
+	"author":"Victor Figueira",
+    "company": "Chill",
+	"description": "lkmEmploymentStatus",
+	"code": "C07",
+	"data": [{
+		"value": "E",
+		"description": "Employed"
+	},{
+		"value": "H",
+		"description": "Household Duties"
+	}, {
+		"value": "R",
+		"description": "Retired"
+	
+	}, {
+		"value": "S",
+		"description": "Self Employed"
+	
+	}, {
+		"value": "U",
+		"description": "Unemployed"
+	
+	}]
+
+}

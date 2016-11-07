@@ -3,53 +3,15 @@
 	"dateCreated":"2016-09-21",
 	"author": "Victor Figueira",
 	"company": "Chill",
-	"description": "Loan Purpose",
+	"description": "lkmMaritalStatus",
 	"code": "C03",
-	"data": [{
-		"value": "V",
-		"description": "Vehicle"
-	}, {
-		"value": "E",
-		"description": "Education"
-	}, {
-		"value": "HI",
-		"description": "Home Improvements"
-	}, {
-		"value": "R",
-		"description": "Refinance"
-	}, {
-		"value": "W",
-		"description": "Wedding"
-	}, {
-		"value": "FE",
-		"description": "Funeral expenses"
-	}, {
-		"value": "CDM",
-		"description": "Cosmetic/Dental/Medical"
-	}, {
-		"value": "I",
-		"description": "Insurance"
-	}, {
-		"value": "H",
-		"description": "Holiday"
-	}, {
-		"value": "HA",
-		"description": "Home Appliances"
-	}, {
-		"value": "B",
-		"description": "Business"
-	}, {
-		"value": "HD",
-		"description": "House Deposit"
-	}, {
-		"value": "LA",
-		"description": "Land Purchase / Agricultural Loan"
-	}, {
-		"value": "TB",
-		"description": "Revenue/Tax bill"	
-	}, {
-		"value": "CC",
-		"description": "Credit Card"
-	}]
+	"data": [
+		{"value":"C","description":"Common Law Spouse"},
+		{"value":"D","description":"Divorced"},
+		{"value":"M","description":"Married"},
+		{"value":"N","description":"Not applicable"},
+		{"value":"A","description":"Separated"},
+		{"value":"S","description":"Single"},
+		{"value":"W","description":"Widowed"}]
 
 }

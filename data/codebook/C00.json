@@ -1,36 +1,16 @@
 {
 	"version": 1,
-	"dateCreated":"2016-11-03",
+	"dateCreated":"2016-09-21",
 	"author":"Victor Figueira",
-	"description": "NCD",
-	"code": "Chill-CND",
+	"company": "Chill",
+	"description": "Yes/No",
+	"code": "C01",
 	"data": [{
-		"value": 0,
-		"description": "No Discount"
-	},{
-		"value": 1,
-		"description": "1 Year"
+		"value": "Y",
+		"description": "Yes"
 	}, {
-		"value": 2,
-		"description": "2 Years"
-	}, {
-		"value": 3,
-		"description": "3 Years"
-	}, {
-		"value": 4,
-		"description": "4 Years"
-	}, {
-		"value": 5,
-		"description": "5 Years"
-	}, {
-		"value": 6,
-		"description": "6 Years"
-	}, {
-		"value": 7,
-		"description": "7 Years"
-	}, {
-		"value": 8,
-		"description": "More than 8 Years"
+		"value": "N",
+		"description": "No"
 	}]
 
 }

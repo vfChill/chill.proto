@@ -1,16 +1,16 @@
 <div ng-cloak="" class="tabsdemoDynamicHeight" layout="column" ng-controller="AppCtrl as ctrl">
   <md-content >
-    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" >
-      <md-nav-item md-nav-click=getTab(0) name="Policy">Policy</md-nav-item>
+    <!--<md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" >
+      <md-nav-item md-nav-click=getTab(0) selected name="Policy">Policy</md-nav-item>
       <md-nav-item md-nav-click=getTab(1) name="Vehicle">Vehicle</md-nav-item>
-      <md-nav-item  md-nav-click=getTab(2) name="Driver">Driver</md-nav-item>
+      <md-nav-item  md-nav-click=getTab(2) name="Driver">Driver</md-nav-item>-->
       <!-- these require actual routing with ui-router or ng-route, so they won't work in the demo
       <md-nav-item md-nav-sref="app.page4" name="page4">Page Four</md-nav-item>
       <md-nav-item md-nav-href="#page5" name="page5">Page Five</md-nav-item>
       -->
-    </md-nav-bar>
+    <!--</md-nav-bar>-->
 
-<md-progress-linear md-mode="determinate" value="45"></md-progress-linear>
+<!--<md-progress-linear md-mode="determinate" value="45"></md-progress-linear>-->
 
     <md-tabs md-stretch-tabs="always" md-selected="selectedTab" md-dynamic-height="2" md-border-bottom="">
       <md-tab label="Policy" ng-hide>

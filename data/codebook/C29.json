@@ -1,0 +1,13 @@
+{
+	"version": 1,
+	"dateCreated": "2016-11-07",
+	"author": "Victor Figueira",
+    "company": "Chill",
+	"description": "lkmProtectedNCB",
+	"code": "029",
+	"data": 
+        [{"value":"F","description":"Full"},
+        {"value":"N","description":"None"},
+        {"value":"P","description":"Partial"},
+        {"value":"S","description":"Step Back"}]
+}

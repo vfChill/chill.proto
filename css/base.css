@@ -35,7 +35,7 @@ bottom: 0px;
 
 
  .risk-driver{
-          width: 320px;
+          width: 800px;
           font-family: 1.05em;
     }
     .testclass button {
@@ -53,8 +53,7 @@ bottom: 0px;
     border: 1px solid #e1e1e1; }
     .tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
       background: white; }
-  .tabsdemoDynamicHeight md-content h1:first-child {
-    margin-top: 0; }
+
    
     .md-tab{
       font-size: 1.03em;

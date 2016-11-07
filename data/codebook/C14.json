@@ -1,0 +1,16 @@
+{
+	"version": 1,
+	"dateCreated": "2016-11-07",
+	"author": "Victor Figueira",
+    "company": "Chill",
+	"description": "lkmSecurityDevice",
+	"code": "014",
+	"data": 
+        [{"value":1001,"description":"Alarm"},
+        {"value":1002,"description":"Alarm &amp; Immob."},
+        {"value":1003,"description":"Alarm &amp; Tracker"},
+        {"value":1004,"description":"Alarm, Immob. &amp; Tracker"},
+        {"value":1005,"description":"Immob. &amp; Tracker"},
+        {"value":1006,"description":"Immobiliser"}]
+
+}

@@ -1,0 +1,13 @@
+{
+	"version": 1,
+	"dateCreated": "2016-11-07",
+	"author": "Victor Figueira",
+    "company": "Chill",
+	"description": "lkmTrailerType",
+	"code": "028",
+	"data": 
+        [{"value":"C","description":"Boat"},
+        {"value":"B","description":"Box Body"},
+        {"value":"H","description":"Horse"},
+        {"value":"O","description":"Open"}]
+}

@@ -1,0 +1,14 @@
+{
+	"version": 1,
+	"dateCreated": "2016-11-07",
+	"author": "Victor Figueira",
+    "company": "Chill",
+	"description": "lkmNCBCode",
+	"code": "022",
+	"data": 
+        [{"value":"A","description":"Full-time Company Car Experience"},
+        {"value":"X","description":"Insurance in Own Name"},
+        {"value":"9","description":"Named Driver Experience"},
+        {"value":"C","description":"Part-time Company Car Experience"}]
+
+}

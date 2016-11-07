@@ -1,0 +1,28 @@
+{
+	"version": 1,
+	"dateCreated": "2016-11-07",
+	"author": "Victor Figueira",
+    "company": "Chill",
+	"description": "lkmValidDrivers",
+	"code": "025",
+	"data": 
+        [{"value":"Q","description":"Any Driver-excluding drivers under 17"},
+        {"value":"018","description":"Any Driver-excluding drivers under 25 or over 70"},
+        {"value":"019","description":"Any Driver-excluding drivers under 30 or over 70"},
+        {"value":"U","description":"Insured & Partner"},
+        {"value":"2","description":"Insured + Spouse"},
+        {"value":"5","description":"Insured and 1 Named driver"},
+        {"value":"B","description":"Insured and 2 Named drivers"},
+        {"value":"C","description":"Insured and 3 Named drivers"},
+        {"value":"D","description":"Insured and 4 Named drivers"},
+        {"value":"R","description":"Insured and 5 Named drivers"},
+        {"value":"T","description":"Insured and Parent"},
+        {"value":"S","description":"Insured and Specified Drivers"},
+        {"value":"1","description":"Insured Only"},
+        {"value":"8","description":"Open Driving 30-70 + named person(s)"},
+        {"value":"P","description":"Open Driving excluding drivers under 25 + named person(s)"},
+        {"value":"O","description":"Open Driving for full EU licence holders aged 25-70 + named person(s)"},
+        {"value":"4","description":"Open Driving no age limit"},
+        {"value":"W","description":"Open Driving with restrictions"},
+        {"value":"V","description":"Open Driving with restrictions + named person(s)"}]
+}
