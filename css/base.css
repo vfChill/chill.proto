@@ -5,7 +5,10 @@ body{
   height: 50px;
     min-height: 50px;
 }
-
+.foot-bar{
+  position: fixed;
+bottom: 0px;
+}
 .md-button.md-chill-purple-theme.md-accent {
     color: rgb(74,43,129);
 }

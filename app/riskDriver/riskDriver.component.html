@@ -1,17 +1,29 @@
-          <div ng-cloak="" class="tabsdemoDynamicHeight" layout="column" ng-controller="AppCtrl as ctrl">
+<div ng-cloak="" class="tabsdemoDynamicHeight" layout="column" ng-controller="AppCtrl as ctrl">
   <md-content >
-    <md-tabs md-stretch-tabs="always" md-dynamic-height="2" md-border-bottom="">
-      <md-tab label="Policy">
+    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" >
+      <md-nav-item md-nav-click=getTab(0) name="Policy">Policy</md-nav-item>
+      <md-nav-item md-nav-click=getTab(1) name="Vehicle">Vehicle</md-nav-item>
+      <md-nav-item  md-nav-click=getTab(2) name="Driver">Driver</md-nav-item>
+      <!-- these require actual routing with ui-router or ng-route, so they won't work in the demo
+      <md-nav-item md-nav-sref="app.page4" name="page4">Page Four</md-nav-item>
+      <md-nav-item md-nav-href="#page5" name="page5">Page Five</md-nav-item>
+      -->
+    </md-nav-bar>
+
+<md-progress-linear md-mode="determinate" value="45"></md-progress-linear>
+
+    <md-tabs md-stretch-tabs="always" md-selected="selectedTab" md-dynamic-height="2" md-border-bottom="">
+      <md-tab label="Policy" ng-hide>
         <md-content class="md-padding">
           <chill-policy ></chill-policy>
         </md-content>
       </md-tab>
-      <md-tab label="Vehicle">
+      <md-tab label="Vehicle" ng-hide>
         <md-content class="md-padding">
           <chill-vehicle ></chill-vehicle>
         </md-content>
       </md-tab>
-      <md-tab label="Driver">
+      <md-tab label="Driver" ng-hide>
         <md-content class="md-padding">
           <chill-driver ></chill-driver>
         </md-content>
@@ -19,4 +31,10 @@
     </md-tabs>
   </md-content>
 </div>
-<md-progress-linear md-mode="determinate" value="{{0.2}}"></md-progress-linear>
+
+
+<md-toolbar class="foot-bar md-medium-tall">
+  <div layout="row" layout-align="center center" flex>
+    <span>FOOTER</span>
+  </div>
+</md-toolbar>
