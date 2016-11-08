@@ -1,0 +1,68 @@
+{
+    "meta": [{
+        "version": 1,
+        "dateCreated":"2016-11-04",
+        "author":"Victor Figueira",
+        "title": "IrishProposerInfo",
+        "code": ""
+        }],
+    "ProposerType": "",
+    "TitleCode": "",
+    "Title":"",         //C01
+    "ForeName":"",  
+    "SureName":"",
+    "Sex":"",           //C02
+    "MaritalStatus":"", //C03
+    "DateOfBirth":"",
+    "AffinityGroup":"",
+    "IrishAddressInfo":[{
+        "Line1":"",
+        "Line2":"",
+        "Line3":"",
+        "Line4":"",
+        "PostCode":"",
+        "GeoCode":"",
+        "MatchType":"",
+        "MatchLevel":"",
+        "RatingFactor":"",
+        "MRACode":"",
+        "GeoId":""
+    }],
+     "IrishContactInfo":[{
+        "Home":"",
+        "Work":"",
+        "Mobil":"",
+        "Fax":"",
+        "mail":""
+    }],
+    "IrishNCDInfo":[{
+        ClaimedYearsEarned
+ClaimedCountry
+ClaimedInsurer
+ClaimedDiscountType
+ClaimedBonusProtectionType
+ClaimedProtectedInd
+ClaimedProvenInd
+ProtectionRequiredInd
+PreviousPolicyExpiryDate
+PreviousPolicyNumber
+DrivingExperienceType
+DrivingExperienceCountry
+DrivingExperienceYears
+DrivingExperienceInsurer
+DrivingExperiencePolicyExpiryDate              
+DrivingExperiencePolicyNumber
+DrivingExperienceRelationshipToProposer
+DrivingExperienceProvenInd
+rebrokeYearsProvided
+rebrokeYears
+
+    }],
+    "YearsAtHomeAddress":"",
+    "HomeownerInd":"",
+    "LastYearsPaymentType":""
+
+	
+	
+
+}

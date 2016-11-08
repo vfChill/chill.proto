@@ -1,6 +1,7 @@
 function DriverController($scope, $http, $timeout, $q) {
   $scope.driverDetails = {
-    gender: 'M'
+    gender: 'M',
+    someoneElsePolicy: false
 		
 	};
 	$http.get('data/codebook/C02.json').then(function (response) {
@@ -15,6 +16,18 @@ function DriverController($scope, $http, $timeout, $q) {
 		$scope.lkmOccupationList = response.data.data;
 	});
 
+  $http.get('data/codebook/C08.json').then(function (response) {
+		$scope.lkmLicenceType = response.data.data;
+	});
+
+  $http.get('data/codebook/Chill-YearsHeldLicence.json').then(function (response) {
+		$scope.YearsHeldLicence = response.data.data;
+	});
+
+  $scope.someoneElsePolicyMessage = 'No';
+  $scope.onChangeSomeoneElsePolicy = function(cbState) {
+  	$scope.someoneElsePolicyMessage = cbState;
+  };
 
 
     // list of `state` value/display objects

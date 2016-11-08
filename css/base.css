@@ -32,7 +32,12 @@ bottom: 0px;
 .purple{
     color: rgb(74,43,129);
 }
+.no-errors-spacer{
 
+}
+.md-errors-spacer{
+  display:none
+}
 
  .risk-driver{
           width: 800px;
@@ -45,6 +50,9 @@ bottom: 0px;
     /*overrite angular*/
     .md-nav-item:first-of-type {
     margin-left: 0px;
+    }
+    .tabsdemoDynamicHeight{
+      margin-bottom: 88px;
     }
    .tabsdemoDynamicHeight md-content {
   background-color: transparent !important; }

@@ -4,7 +4,7 @@ function VehicleController($scope, $http) {
         value: 10000,
         
 	};
-	$http.get('data/codebook/C015.json').then(function (response) {
+	$http.get('data/codebook/C15.json').then(function (response) {
 		$scope.lkmOverNightLocation = response.data.data;
 	});
     

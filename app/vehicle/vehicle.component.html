@@ -4,12 +4,12 @@
     <form name="userForm">
         <!-- Car Reg -->
         <div layout="row">
-            <md-input-container class="md-block" flex>
+            <md-input-container class="md-block no-errors-spacer" flex>
                 <label>Vehicle Registration Number</label>
                 <input ng-model="vehicleDetails.carReg" ng-disabled="true" ng-change="showChanges()">
             </md-input-container>
         </div>
-        <hr>
+        <!--<hr>-->
         <!-- Car Value -->
         <div layout="row">
             <md-input-container class="md-block" flex>
@@ -17,7 +17,7 @@
                 <input ng-model="vehicleDetails.value" ng-disabled="true" type="number" ng-change="showChanges()">
             </md-input-container>
         </div>
-        <hr>
+        <!--<hr>-->
         <!-- Year Purchased -->
         <div layout="row">
             <md-input-container class="md-block" flex>
@@ -28,7 +28,7 @@
                 </md-select>
             </md-input-container>
         </div>
-        <hr>
+        <!--<hr>-->
         <!-- Mileage -->
         <label class="genLabel"> Mileage</label>
         <div layout = "row" class="md-block" flex>
@@ -41,7 +41,7 @@
                 </md-input-container>-->
             </md-slider-container>
         </div>
-        <hr>
+        <!--<hr>-->
         <!-- Parked Over Night -->
         <div layout="row">
             <md-input-container class="md-block" flex>
@@ -51,6 +51,6 @@
                 </md-select>
             </md-input-container>
         </div>
-        <hr>
+        <!--<hr>-->
     </form>
 </div>

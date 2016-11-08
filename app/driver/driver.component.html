@@ -67,7 +67,7 @@
             </div>
             </md-autocomplete>
         </div>
-        <hr>
+
     <!-- Ocupation-->
         <!--<div layout="row">
             <md-input-container class="md-block" flex>
@@ -102,10 +102,52 @@
             </div>
             </md-autocomplete>
         </div>
-        <hr>
+
     <!-- Licence type-->
-    <!-- Licence Years Hold-->
+        <div layout="row">
+            <md-input-container class="md-block" flex>
+                <label>Licence Type</label>
+                <md-select ng-model="driverDetails.licenceType" ng-change="showChanges()">
+                    <md-option ng-repeat="licenceType in lkmLicenceType" ng-value="licenceType.value">{{licenceType.description}}</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+
+    <!-- Licence Years Held-->
+        <div layout="row">
+            <md-input-container class="md-block" flex>
+                <label>Licence Years Hold</label>
+                <md-select ng-model="driverDetails.YearsHeldLicence" ng-change="showChanges()">
+                    <md-option ng-repeat="yearHeldLicence in YearsHeldLicence" ng-value="yearHeldLicence.value">{{yearHeldLicence.description}}</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
     <!-- Insured Someone else policy-->
+        <div layout="row">
+            <md-card  layout="row" md-theme-watch class="md-block" flex>
+                <md-card-actions layout="column" layout-align="start">
+                     <div layout="row" >
+                        <md-switch class="md-block"  ng-model="driverDetails.someoneElsePolicy" aria-label="someoneElsePolicy" ng-change="onChangeSomeoneElsePolicy('yes')">
+                            Insured Someone else policy: {{ someoneElsePolicyMessage }}
+                        </md-switch>
+                     </div>
+                    <!-- Other Policy type-->
+                    <!---->
+                   
+                    <div layout="row" ng-if="driverDetails.someoneElsePolicy">
+            <md-input-container class="md-block" flex>
+                <label>Licence Type</label>
+                <md-select ng-model="driverDetails.licenceType" ng-change="showChanges()">
+                    <md-option ng-repeat="licenceType in lkmLicenceType" ng-value="licenceType.value">{{licenceType.description}}</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+                    
+
+                </md-card-actions>
+            </md-card>
+        </div>
     <!-- Policy Holder Penalty Points-->
+    
     </form>
 </div>

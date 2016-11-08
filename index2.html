@@ -45,50 +45,34 @@
 <body ng-app="FqApp" ng-cloak layout="column" ng-controller="AppCtrl as ctrl">
 <!--    Header-->
   <chill-fqheader ></chill-fqheader>
-  
-  <div flex layout="row" >
-    <!--    LEFT-->
-     <md-sidenav class="risk-driver md-sidenav-left"
-      md-component-id="left"
-      md-is-locked-open="true"
-      md-whiteframe="4" 
-      layout="row" 
-      md-theme="chill-palette">
-        <md-content flex>
+  <div layout="row" layout-xs="column" md-theme="chill-palette">
+    <div flex="66">
+       <md-content flex>
           <chill-riskdriver ></chill-riskdriver>
         </md-content>
-       
-      </md-sidenav>
-    <!--    CENTER-->
-    <div layout="column" flex >
-      <md-toolbar md-theme="chill-palette" class="toolsBar md-hue-1">
-      <div class="md-toolbar-tools ">
-        <md-button aria-label="Go Back">
-          ACCURACY
-        </md-button>
-       <md-progress-linear md-mode="determinate" value="45" flex></md-progress-linear>
-        
-        <span flex></span>
-        <md-button class="md-raised" aria-label="Learn More">
-          Sort by: Price
-        </md-button>
-        <md-button class="md-fab md-mini" aria-label="Favorite">
-          
-          <md-icon class="icon_home" aria-label="Home"></md-icon>
-        </md-button>
-      </div>
-    </md-toolbar>
     </div>
-    <!--    RIGHT-->
-    <md-sidenav class="md-sidenav-right "
-        md-component-id="right "
-        md-is-locked-open="false"
-        md-whiteframe="4" 
-        layout-padding>
-      <md-content>
-        
-      </md-content>
-    </md-sidenav>
-  </div>
+    <div flex="33">
+            <div layout="column" flex >
+            <md-toolbar md-theme="chill-palette" class="toolsBar md-hue-1">
+            <div class="md-toolbar-tools ">
+                <md-button aria-label="Go Back">
+                ACCURACY
+                </md-button>
+            <md-progress-linear md-mode="determinate" value="45" flex></md-progress-linear>
+                
+                <span flex></span>
+                <md-button class="md-raised" aria-label="Learn More">
+                Sort by: Price
+                </md-button>
+                <md-button class="md-fab md-mini" aria-label="Favorite">
+                
+                <md-icon class="icon_home" aria-label="Home"></md-icon>
+                </md-button>
+            </div>
+            </md-toolbar>
+            </div>
+    </div>
+</div>
+  
 </body>
 </html>

@@ -1,0 +1,36 @@
+{
+	"version": 1,
+	"dateCreated":"2016-11-08",
+	"author":"Victor Figueira",
+	"description": "YearsHeldLicence",
+	"code": "Chill-YearsHeldLicence",
+	"data": [{
+		"value": 1,
+		"description": "1 Year or Less"
+	},{
+		"value": 2,
+		"description": "2 Years"
+	}, {
+		"value": 3,
+		"description": "3 Years"
+	}, {
+		"value": 4,
+		"description": "4 Years"
+	}, {
+		"value": 5,
+		"description": "5 Years"
+	}, {
+		"value": 6,
+		"description": "6 Years"
+	}, {
+		"value": 7,
+		"description": "7 Years"
+	}, {
+		"value": 8,
+		"description": "8 Years"
+	}, {
+		"value": 9,
+		"description": "More than 9 Years"
+	}]
+
+}

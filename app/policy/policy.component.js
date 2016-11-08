@@ -8,7 +8,7 @@ function PolicyController($scope, $http) {
 	$http.get('data/codebook/Chill-CND.json').then(function (response) {
 		$scope.CDNs = response.data.data;
 	});
-	$http.get('data/codebook/C016.json').then(function (response) {
+	$http.get('data/codebook/C16.json').then(function (response) {
 		$scope.coverTypes = response.data.data;
 	});
 }
